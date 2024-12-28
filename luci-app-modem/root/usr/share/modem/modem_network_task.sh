@@ -242,7 +242,9 @@ modem_network_task()
             #输出日志
             echo "[$(date +"%Y-%m-%d %H:%M:%S")] Unable to get IPv4 address" >> "${MODEM_RUNDIR}/modem${modem_no}_dial.cache"
             echo "[$(date +"%Y-%m-%d %H:%M:%S")] Redefine connect to ${define_connect}" >> "${MODEM_RUNDIR}/modem${modem_no}_dial.cache"
-            service modem reload
+            
+            #取消 reload ，使用FM350会导致拨号异常
+            # service modem reload 
 
             #输出日志
             echo "[$(date +"%Y-%m-%d %H:%M:%S")] Modem dial" >> "${MODEM_RUNDIR}/modem${modem_no}_dial.cache"
