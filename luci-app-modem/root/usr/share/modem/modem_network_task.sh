@@ -161,7 +161,7 @@ rndis_dial()
         #激活并拨号
         at "${at_port}" "${at_command}"
 
-        sleep 3s
+        sleep 5s
     else
         #拨号
         ecm_dial "${at_port}" "${manufacturer}" "${define_connect}"
